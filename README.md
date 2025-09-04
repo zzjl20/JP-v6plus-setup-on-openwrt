@@ -36,6 +36,7 @@ V6plus类型网络将IPv4的地址打包进IPv6格式中，map包的作用，是
 
 <img src="/pics/pic5.png" width="600">
 <img src="/pics/pic6.png" width="600">
+
 ### step3 配置wan6口
 选择Internet -> Interface, 来到接口菜单。此时未经任何配置的接口应该是这样的。
 
