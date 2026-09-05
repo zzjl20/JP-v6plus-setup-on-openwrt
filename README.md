@@ -24,6 +24,8 @@
 
 https://ipv4.web.fc2.com/map-e.html
 
+此处需要之前查找到的自身ipv6地址： 2404:1234:5678:90ab:xxxx:xxxx:xxxx:xxxx/64
+
 只需把ipv6地址填入第一行，然后点击“计算”即可，得到的结果保存为图片后用。
 <img src="/pics/pic3.png" width="600">
 ## 正式设置步骤
@@ -36,6 +38,8 @@ V6plus类型网络将IPv4的地址打包进IPv6格式中，map包的作用，是
 
 <img src="/pics/pic5.png" width="600">
 <img src="/pics/pic6.png" width="600">
+
+点击“Save”回到主界面。
 
 ### step3 配置wan6口
 选择Internet -> Interface, 来到接口菜单。此时未经任何配置的接口应该是这样的。
@@ -82,9 +86,9 @@ V6plus类型网络将IPv4的地址打包进IPv6格式中，map包的作用，是
 但是IPv4仍然无法使用。因为我们还为将v6plus网址中的IPv4地址解析出来。此时的wan6接口应该如下：
 
 <img src="/pics/pic10.png" width="600">
-IPv6 地址之下应该还有一个IPv6 PD参数，但此时没有。据说开办v6plus业务同时也开通光电话，那么就会自动出现这个参数，那就可以跳过这一步，到下一步修改wan接口部分。但是如果没有，就需要我们手动加上了。这一步无法在luci界面中完成。
+IPv6 地址之下应该还有一个IPv6 PD参数，但此时没有。据说开办v6plus业务同时也开通光电话，那么就会自动出现这个参数，那就可以跳过这一步，到下一步修改wan接口部分。但是如果没有，就需要我们手动加上了。
 
-使用ssh工具进入路由器，输入如下代码：
+这一步无法在luci界面中完成。使用ssh工具进入路由器，输入如下代码：
 ```
 uci set network.wan6.ip6prefix="2024:1234:5678:90ab::/64"
 uci show network.wan6.ip6prefix
